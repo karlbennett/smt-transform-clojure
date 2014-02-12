@@ -1,0 +1,12 @@
+[COMMENT][file]; This was stolen from Compojure.[file][COMMENT]
+[list]([list][SYMBOL][literal][form]defn[form][literal][SYMBOL] [SYMBOL][literal][form]files[form][literal][SYMBOL]
+  [STRING][literal][form]"A route for serving static files from a directory. Accepts the following
+keys:
+:root - the root path where the files are stored. Defaults to 'public'."[form][literal][STRING]
+  [vector][form][[form][vector][SYMBOL][literal][form]path[form][literal][SYMBOL] [special_form][reader_macro][form]&[form][reader_macro][special_form] [SYMBOL][literal][form]options[form][literal][SYMBOL][vector]][vector]]
+  [list][form]([form][list][SYMBOL][literal][form]->[form][literal][SYMBOL] [list][form]([form][list][SYMBOL][literal][form]GET[form][literal][SYMBOL] [list][form]([form][list][SYMBOL][literal][form]add-wildcard[form][literal][SYMBOL] [SYMBOL][literal][form]path[form][literal][SYMBOL][list])[list] [map][form]{[form][map][map][form]{[form][map][SYMBOL][literal][form]file-path[form][literal][SYMBOL] [KEYWORD][literal][form]:*[form][literal][KEYWORD][map]}[map] [KEYWORD][literal][form]:route-params[form][literal][KEYWORD][map]}[map]
+        [list][form]([form][list][SYMBOL][literal][form]let[form][literal][SYMBOL] [SYMBOL][literal][form]options[form][literal][SYMBOL] [list][form]([form][list][SYMBOL][literal][form]merge[form][literal][SYMBOL] [map][form]{[form][map][KEYWORD][literal][form]:root[form][literal][KEYWORD] [STRING][literal][form]"public"[form][literal][STRING][map]}[map] [SYMBOL][literal][form]options[form][literal][SYMBOL][list])[list]]
+          [list][form]([form][list][SYMBOL][literal][form]file-response[form][literal][SYMBOL] [SYMBOL][literal][form]file-path[form][literal][SYMBOL] [SYMBOL][literal][form]options[form][literal][SYMBOL][list])[list][list])[list]
+    [COMMENT]; Random extra comment.[COMMENT]
+    [list][form]([form][list][SYMBOL][literal][form]wrap-file-info[form][literal][SYMBOL] [list][form]([form][list][KEYWORD][literal][form]:mime-types[form][literal][KEYWORD] [SYMBOL][literal][form]options[form][literal][SYMBOL][list])[list][list])[list]
+    [list][form]([form][list][SYMBOL][literal][form]wrap-head[form][literal][SYMBOL]

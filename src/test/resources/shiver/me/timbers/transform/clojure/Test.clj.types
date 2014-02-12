@@ -1,0 +1,12 @@
+[COMMENT]; This was stolen from Compojure.[COMMENT]
+([SYMBOL]defn[SYMBOL] [SYMBOL]files[SYMBOL]
+  [STRING]"A route for serving static files from a directory. Accepts the following
+keys:
+:root - the root path where the files are stored. Defaults to 'public'."[STRING]
+  [[SYMBOL]path[SYMBOL] & [[SYMBOL]options[SYMBOL]]]
+  ([SYMBOL]->[SYMBOL] ([SYMBOL]GET[SYMBOL] ([SYMBOL]add-wildcard[SYMBOL] [SYMBOL]path[SYMBOL]) {{[SYMBOL]file-path[SYMBOL] [KEYWORD]:*[KEYWORD]} [KEYWORD]:route-params[KEYWORD]}
+        ([SYMBOL]let[SYMBOL] [[SYMBOL]options[SYMBOL] ([SYMBOL]merge[SYMBOL] {[KEYWORD]:root[KEYWORD] [STRING]"public"[STRING]} [SYMBOL]options[SYMBOL])]
+          ([SYMBOL]file-response[SYMBOL] [SYMBOL]file-path[SYMBOL] [SYMBOL]options[SYMBOL])))
+    [COMMENT]; Random extra comment.[COMMENT]
+    ([SYMBOL]wrap-file-info[SYMBOL] ([KEYWORD]:mime-types[KEYWORD] [SYMBOL]options[SYMBOL]))
+    ([SYMBOL]wrap-head[SYMBOL])))

@@ -1,0 +1,12 @@
+[file]; This was stolen from Compojure.[file]
+[list]([list][literal][form]defn[form][literal] [literal][form]files[form][literal]
+  [literal][form]"A route for serving static files from a directory. Accepts the following
+keys:
+:root - the root path where the files are stored. Defaults to 'public'."[form][literal]
+  [vector][form][[form][vector][literal][form]path[form][literal] [special_form][reader_macro][form]&[form][reader_macro][special_form] [vector][form][[form][vector][literal][form]options[form][literal][vector]][vector][vector]][vector]
+  [list][form]([form][list][literal][form]->[form][literal] [list][form]([form][list][literal][form]GET[form][literal] [list][form]([form][list][literal][form]add-wildcard[form][literal] [literal][form]path[form][literal][list])[list] [map][form]{[form][map][map][form]{[form][map][literal][form]file-path[form][literal] [literal][form]:*[form][literal][map]}[map] [literal][form]:route-params[form][literal][map]}[map]
+        [list][form]([form][list][literal][form]let[form][literal] [vector][form][[form][vector][literal][form]options[form][literal] [list][form]([form][list][literal][form]merge[form][literal] [map][form]{[form][map][literal][form]:root[form][literal] [literal][form]"public"[form][literal][map]}[map] [literal][form]options[form][literal][list])[list][vector]][vector]
+          [list][form]([form][list][literal][form]file-response[form][literal] [literal][form]file-path[form][literal] [literal][form]options[form][literal][list])[list][list])[list][list])[list]
+    ; Random extra comment.
+    [list][form]([form][list][literal][form]wrap-file-info[form][literal] [list][form]([form][list][literal][form]:mime-types[form][literal] [literal][form]options[form][literal][list])[list][list])[list]
+    [list][form]([form][list][literal][form]wrap-head[form][literal][list])[list][list])[list][list])[list]
